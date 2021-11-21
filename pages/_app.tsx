@@ -1,4 +1,7 @@
 import '../styles/globals.css'
+import "../styles/tailwind.css"
+import "react-awesome-slider/dist/styles.css";
+
 import type { AppProps } from 'next/app'
 
 function MyApp({ Component, pageProps }: AppProps) {

@@ -5,18 +5,31 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@headlessui/react": "^1.4.2",
+    "daisyui": "^1.16.2",
     "next": "12.0.4",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-awesome-slider": "^4.1.0",
+    "react-dom": "17.0.2",
+    "react-icons": "^4.3.1",
+    "react-use": "^17.3.1",
+    "react-use-scroll-direction": "^0.1.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.16.0",
     "@types/node": "16.11.9",
     "@types/react": "17.0.36",
+    "autoprefixer": "^10.4.0",
+    "babel-loader": "^8.2.3",
     "eslint": "7",
     "eslint-config-next": "12.0.4",
+    "postcss": "^8.3.11",
+    "tailwindcss": "^2.2.19",
     "typescript": "4.5.2"
   }
 }
