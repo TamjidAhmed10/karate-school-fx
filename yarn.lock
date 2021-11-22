@@ -429,6 +429,18 @@
   resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.1.0.tgz#7f698254aadf921e48dda8c0a6b304026b8a9323"
   integrity sha512-JLo+Y592QzIE+q7Dl2pMUtt4q8SKYI5jDrZxrozEQxnGVOyYE+GWK9eLkwTaeN9DDctlaRAQ3TBmzZ1qdLE30A==
 
+"@splidejs/react-splide@^0.6.15":
+  version "0.6.15"
+  resolved "https://registry.yarnpkg.com/@splidejs/react-splide/-/react-splide-0.6.15.tgz#112df801135d2786f14ecc52ae65a5f62f4fa1d9"
+  integrity sha512-l8CkD4n2cG63aHs3scMgVLnyFrAd1tLB/YYMqmt+FMNX/bYllzfIRsHcYE39DI+CHf4kMdPTHsuwB9EcD0jEcg==
+  dependencies:
+    "@splidejs/splide" "^3.6.1"
+
+"@splidejs/splide@^3.6.1":
+  version "3.6.1"
+  resolved "https://registry.yarnpkg.com/@splidejs/splide/-/splide-3.6.1.tgz#122796550fee956995e9a7b5b985235745bf932b"
+  integrity sha512-dqRtkJ8y/VQaOgZChY6MU/X8DYMdlNrqNb4xEW3B1PXwU1vyKi4x110mhuLI7NPxvWRslBx2R+qYAzEfVMN6fg==
+
 "@types/js-cookie@^2.2.6":
   version "2.2.7"
   resolved "https://registry.yarnpkg.com/@types/js-cookie/-/js-cookie-2.2.7.tgz#226a9e31680835a6188e887f3988e60c04d3f6a3"

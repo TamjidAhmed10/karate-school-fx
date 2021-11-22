@@ -1,7 +1,8 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Navbar from '../Components/Navbar'
-import Caurosal from "../Components/Caurosal"
+import Caurosal2 from "../Components/Caurosal2"
+import Details from '../Components/Details'
 const Home: NextPage = () => {
   return (
     <div >
@@ -11,7 +12,8 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      <Caurosal/> 
+      <Caurosal2 />
+      <Details/>
     
     </div>
   )
