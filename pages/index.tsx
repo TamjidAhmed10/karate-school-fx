@@ -9,6 +9,8 @@ import FAQ from '../Components/FAQ'
 import Partners from '../Components/Partners'
 import Footer from '../Components/Footer'
 import Shop from '../Components/Shop'
+import Class from '../Components/Class'
+import Payment from '../Components/Payment'
 const Home: NextPage = () => {
   return (
     <div >
@@ -23,7 +25,9 @@ const Home: NextPage = () => {
       <Details />
       <JoinUs />
       <Team />
-      <Shop/>
+      <Shop />
+      <Class />
+      <Payment/>
       <FAQ/>
       <Footer/>
     </div>

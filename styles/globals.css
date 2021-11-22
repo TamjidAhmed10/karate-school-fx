@@ -1,41 +1,37 @@
-.custombgcolor{
-    background-color: #C1D445
-
+.custombgcolor {
+  background-color: #c1d445;
 }
-.customcolor{
-        color: #C1D445
-
+.customcolor {
+  color: #c1d445;
 }
-.customheight{
-    height: 500px;
+.customheight {
+  height: 500px;
 }
 img {
-    display: block;
+  display: block;
 }
 
 .thumbnail {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
 .caption {
-    position: absolute;
-    top: 50%;
-    left: 75%;
-    transform: translate( -50%, -50% );
-    text-align: center;
-    color: white;
-    font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  font-weight: bold;
 }
-.glass{
-    background: rgba( 223, 152, 152, 0.45 );
-box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-/* backdrop-filter: blur( 3.5px );
--webkit-backdrop-filter: blur( 3.5px ); */
-border-radius: 10px;
-border: 1px solid rgba( 255, 255, 255, 0.18 );
+.glass {
+  background: rgba(223, 152, 152, 0.45);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
-.bgwithimage{
-    background-image: url("/1.jpg");
-    background-size: cover;
+.bgwithimage {
+  background-image: url("/1.jpg");
+  background-size: cover;
 }

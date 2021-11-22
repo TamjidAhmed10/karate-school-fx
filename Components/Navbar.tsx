@@ -61,9 +61,14 @@ const Navbar: React.FC = () => {
             <div className="flex items-stretch">
               <a className="btn btn-ghost btn-sm rounded-btn">HOME</a>
 
-              <a className="btn btn-ghost btn-sm rounded-btn">Certification</a>
+              <a className="btn btn-ghost btn-sm rounded-btn">INSTRUCTOR</a>
 
-              <a className="btn btn-ghost btn-sm rounded-btn">Contact</a>
+              <a className="btn btn-ghost btn-sm rounded-btn">CLASS</a>
+              <a className="btn btn-ghost btn-sm rounded-btn">GALLERY</a>
+              <a className="btn btn-ghost btn-sm rounded-btn">EVENT & NEWS</a>
+              <a className="btn btn-ghost btn-sm rounded-btn">CONTACT US</a>
+              <a className="btn btn-ghost btn-sm rounded-btn">CONTACT US</a>
+              <a className="btn btn-ghost btn-sm rounded-btn">SHOP</a>
             </div>
           </div>
 
@@ -105,7 +110,7 @@ const Navbar: React.FC = () => {
                 setIsOpen(!isOpen);
               }}
             >
-              Certification
+              INSTRUCTOR
             </div>
 
             <div
@@ -114,7 +119,56 @@ const Navbar: React.FC = () => {
                 setIsOpen(!isOpen);
               }}
             >
-              Contact
+              CLASS
+            </div>
+            <div
+              className="py-3 border-t-2 border-gray-600 cursor-pointer"
+              onClick={() => {
+                setIsOpen(!isOpen);
+              }}
+            >
+              GALLERY
+            </div>
+            <div
+              className="py-3 border-t-2 border-gray-600 cursor-pointer"
+              onClick={() => {
+                setIsOpen(!isOpen);
+              }}
+            >
+              EVENT & NEWS
+            </div>
+            <div
+              className="py-3 border-t-2 border-gray-600 cursor-pointer"
+              onClick={() => {
+                setIsOpen(!isOpen);
+              }}
+            >
+              CONTACT US
+            </div>
+            <div
+              className="py-3 border-t-2 border-gray-600 cursor-pointer"
+              onClick={() => {
+                setIsOpen(!isOpen);
+              }}
+            >
+              HOME
+            </div>
+            <div
+              className="py-3 border-t-2 border-gray-600 cursor-pointer"
+              onClick={() => {
+                setIsOpen(!isOpen);
+              }}
+            >
+              SHOP
+            </div>
+            
+            <div
+              className="py-3 border-t-2 border-gray-600 cursor-pointer"
+              onClick={() => {
+                setIsOpen(!isOpen);
+              }}
+            >
+              HOME
             </div>
           </div>
         </Transition>
