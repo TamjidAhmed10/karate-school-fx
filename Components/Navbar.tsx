@@ -33,9 +33,9 @@ const Navbar: React.FC = () => {
           (direction ? " top-0 " : " -top-36 ")
         }
       >
-        <div className="navbar text-black md:ml-36 md:mr-28">
+        <div className="navbar text-black md:ml-10 md:mr-4">
           <div
-            className="flex-1 px-2 mx-2 cursor-pointer"
+            className="flex-1  px-2 mx-2 cursor-pointer"
             onClick={() => {
               setIsOpen(false);
             }}
@@ -45,7 +45,7 @@ const Navbar: React.FC = () => {
               alt="Picture of the author"
               width={32}
               height={32}
-              className=""
+              className=" "
             />
 
             <span
@@ -54,10 +54,10 @@ const Navbar: React.FC = () => {
                 setIsOpen(false);
               }}
             >
-              Portfolio <small className="text-xs">by Tamjid</small>
+              LSKK
             </span>
           </div>
-          <div className="flex-none hidden px-2 mx-2 lg:flex">
+          <div className="flex-shrink hidden px-2 mx-2 md:flex">
             <div className="flex items-stretch">
               <a className="btn btn-ghost btn-sm rounded-btn">HOME</a>
 
@@ -161,7 +161,7 @@ const Navbar: React.FC = () => {
             >
               SHOP
             </div>
-            
+
             <div
               className="py-3 border-t-2 border-gray-600 cursor-pointer"
               onClick={() => {
