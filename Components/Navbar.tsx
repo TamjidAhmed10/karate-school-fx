@@ -33,7 +33,7 @@ const Navbar: React.FC = () => {
           (direction ? " top-0 " : " -top-36 ")
         }
       >
-        <div className="navbar text-black md:ml-10 md:mr-4">
+        <div className="navbar text-black lg:ml-10 lg:mr-4">
           <div
             className="flex-1  px-2 mx-2 cursor-pointer"
             onClick={() => {
@@ -57,7 +57,7 @@ const Navbar: React.FC = () => {
               LSKK
             </span>
           </div>
-          <div className="flex-shrink hidden px-2 mx-2 md:flex">
+          <div className="flex-shrink hidden px-2 mx-2 lg:flex">
             <div className="flex items-stretch">
               <a className="btn btn-ghost btn-sm rounded-btn">HOME</a>
 
@@ -74,7 +74,7 @@ const Navbar: React.FC = () => {
 
           <div className="flex-none">
             <button
-              className="btn btn-square btn-ghost md:hidden"
+              className="btn btn-square btn-ghost lg:hidden"
               onClick={() => {
                 setIsOpen(!isOpen);
               }}
@@ -94,7 +94,7 @@ const Navbar: React.FC = () => {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="  custombgcolor grid grid-cols-1 text-black justify-center text-center  md:hidden ">
+          <div className="  custombgcolor grid grid-cols-1 text-black justify-center text-center  lg:hidden ">
             <div
               className="py-3 border-t-2 border-gray-600 cursor-pointer"
               onClick={() => {
