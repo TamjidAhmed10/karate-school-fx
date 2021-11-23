@@ -8,12 +8,17 @@ const JoinUs = () => {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="bg-green-200 bg-opacity-50">
+      <div
+        className=" "
+        style={{
+          backgroundColor: "rgba(201, 218, 81, .3)",
+        }}
+      >
         <div className="text-center  w-96  mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 z-20">
           <h2 className="text-3xl  font-extrabold text-black dark:text-white sm:text-3xl">
             <span
               className="block shadow-2xl	"
-              style={{ textShadow: "3px 3px 6px gray" }}
+              style={{ textShadow: "3px 3px 6px white" }}
             >
               I am Shajniyaz Jinnah
             </span>

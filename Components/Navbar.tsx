@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useScrollDirection } from "react-use-scroll-direction";
 import { Transition } from "@headlessui/react";
 import { FaBars } from "react-icons/fa";
+import { ImCross } from "react-icons/im";
 import { useWindowSize } from "react-use";
 import Image from "next/image";
 
@@ -33,23 +34,23 @@ const Navbar: React.FC = () => {
           (direction ? " top-0 " : " -top-36 ")
         }
       >
-        <div className="navbar text-black lg:ml-10 lg:mr-4">
+        <div className="navbar text-black lg:ml-16 lg:mr-4">
           <div
-            className="flex-1  px-2 mx-2 cursor-pointer"
+            className="flex-1  px-2 mx-2 cursor-pointer "
             onClick={() => {
               setIsOpen(false);
             }}
           >
             <Image
-              src="/favicon.ico"
+              src="/mainlogo.png"
               alt="Picture of the author"
-              width={32}
-              height={32}
-              className=" "
+              width={48}
+              height={48}
+              className=" object-contain "
             />
 
             <span
-              className="pl-1 text-lg font-bold"
+              className="pl-1 text-lg font-bold pt-1"
               onClick={() => {
                 setIsOpen(false);
               }}
@@ -79,7 +80,7 @@ const Navbar: React.FC = () => {
                 setIsOpen(!isOpen);
               }}
             >
-              <FaBars />
+              {isOpen ? <ImCross /> : <FaBars />}
             </button>
           </div>
         </div>
@@ -114,7 +115,7 @@ const Navbar: React.FC = () => {
             </div>
 
             <div
-              className="py-3 border-t-2 border-b-2 border-gray-600 cursor-pointer"
+              className="py-3 border-t-2  border-gray-600 cursor-pointer"
               onClick={() => {
                 setIsOpen(!isOpen);
               }}

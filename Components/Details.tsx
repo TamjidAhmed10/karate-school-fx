@@ -1,16 +1,20 @@
 /* eslint-disable @next/next/no-img-element */
 const Details = () => {
   return (
-    <div>
-      <h1 className="text-center text-4xl customcolor">
+    <div style={{ backgroundColor: "#F5FAB9" }}>
+      <h1 className=" mt-10 text-center text-4xl" style={{ color: "#6E7600" }}>
         Limhamns Shotokan Karate Klubb (LSKK)
       </h1>
       <div className="grid gird-cols-1 md:grid-cols-2 p-5">
-        <img src="/1.jpg" alt="" className=" h-full w-full object-cover rounded-xl" />
+        <img
+          src="/1.jpg"
+          alt=""
+          className=" h-full w-full object-cover rounded-xl"
+        />
         <div className=" grid place-items-center ">
-          <div className="md:pl-10">
-            <h2 className="text-center text-3xl">World Class Instructor (Sensei)</h2>
-            <p className="text-center">
+          <div className="py-4 px-2 md:p-10">
+            <h2 className=" text-3xl text-center ">Our Philosophy</h2>
+            <p className="text-justify ">
               Sensei Shahnawaz Jinnah, Black Belt 5th Dan, is the founder and
               chef instructor(Sensei) of Limhamns Shotokan Karateklubb(LSKK),
               Klagshamn-Malmö. Sensei Jinnah joined Danish Karate Federation
@@ -34,12 +38,12 @@ const Details = () => {
         <img
           src="/4.jpg"
           alt=""
-          className="md:order-2 h-full w-full object-cover"
+          className="md:order-2 h-full w-full object-cover rounded-xl"
         />
         <div className=" grid place-items-center ">
-          <div className="pr-10 ">
-            <h2 className=" text-3xl text-center ">Modern Studio</h2>
-            <p className="text-center">
+          <div className="py-4 px-2 md:p-10">
+            <h2 className=" text-3xl text-center ">Our Philosophy</h2>
+            <p className="text-justify ">
               Limhamns Shotokan Karate Klubb (LSKK) is conducting all training
               sessions and classes in Klagshamn Folkets Hus, Klagshamn, Malmö. A
               well known ground for sports & leisure activities, it has all
@@ -54,10 +58,14 @@ const Details = () => {
         </div>
       </div>
       <div className="grid gird-cols-1 md:grid-cols-2 p-5">
-        <img src="/5.jpg" alt="" className=" h-full w-full object-cover" />
-        <div>
-          <h2>Our Philosophy</h2>
-          <p>
+        <img
+          src="/5.jpg"
+          alt=""
+          className=" h-full w-full object-cover rounded-xl"
+        />
+        <div className="py-4 px-2 md:p-10">
+          <h2 className=" text-3xl text-center ">Our Philosophy</h2>
+          <p className="text-justify ">
             We promote karate for not only the improvement of physical health
             but also for increasing mental wellbeing. Our sessions are helping
             both adults and children to gain physical strength, boost

@@ -1,7 +1,7 @@
 const Partners = () => {
     return (
       <div>
-        <section className="bg-white pt-7 pb-14">
+        <section className="pt-7 pb-14" style={{ backgroundColor: "#FDFFDE " }}>
           <div className="container px-8 mx-auto sm:px-12 lg:px-20">
             <h1 className="text-sm font-bold tracking-wide text-center text-gray-800 uppercase mb-7">
               Trusted by top-leading companies.

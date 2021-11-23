@@ -1,7 +1,7 @@
 const Class = () => {
     return (
-      <div>
-        <h1 className="text-3xl text-center mb-10">Class and Session</h1>
+      <div className=" py-8 " style={{ backgroundColor: "#E6EFB7" }}>
+        <h1 className="text-3xl text-center mb-4">Class and Session</h1>
         <div className=" grid  md:grid-flow-col md:auto-cols-min  justify-center ">
           <div className=" w-full md:w-64 ">
             <div className=" text-center md:text-right tracking-wide	">

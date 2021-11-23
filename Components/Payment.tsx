@@ -1,9 +1,9 @@
 const Payment = () => {
     return (
       <div>
-        <div className=" mt-3">
+        <div className="py-10" style={{ backgroundColor: "#DAE691" }}>
           <div className="text-center ">
-            <h3 className=" my-3 font-bold text-2xl">Payment Method</h3>
+            <h3 className="  font-bold text-2xl">Payment Method</h3>
             <p style={{ marginBottom: 0 }} className="">
               <span className="font-bold">IBAN:</span> SE6095000099602609893736
             </p>
@@ -14,7 +14,7 @@ const Payment = () => {
               Nordea Bank, Sweden
             </p>
           </div>
-          <div className=" mt-10 grid  md:grid-flow-col md:auto-cols-min  justify-center ">
+          <div className="mt-5 grid  md:grid-flow-col md:auto-cols-min  justify-center ">
             <div className=" w-full  md:w-28 ">
               <div className=" text-center md:text-right tracking-wide	">
                 <p className=" font-bold">Bank Giro</p>
