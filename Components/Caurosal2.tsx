@@ -20,7 +20,7 @@ const Caurosal2 = () => {
               alt="Image 1"
               className="object-cover  w-full block"
             />
-            <div className="caption glass p-4">
+            <div className="caption p-4">
               ACTION-SOCHIN <br /> Action in Sochin
             </div>
           </div>
@@ -28,6 +28,7 @@ const Caurosal2 = () => {
         <SplideSlide>
           <div className=" thumbnail">
             <img src="2.jpg" alt="Image 2" className="object-cover w-full" />
+            
           </div>
         </SplideSlide>
         <SplideSlide>

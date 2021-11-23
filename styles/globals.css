@@ -1,5 +1,6 @@
 .custombgcolor{
     background-color: #C1D445
+
 }
 .customcolor{
         color: #C1D445
@@ -29,8 +30,12 @@ img {
 .glass{
     background: rgba( 223, 152, 152, 0.45 );
 box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-backdrop-filter: blur( 3.5px );
--webkit-backdrop-filter: blur( 3.5px );
+/* backdrop-filter: blur( 3.5px );
+-webkit-backdrop-filter: blur( 3.5px ); */
 border-radius: 10px;
 border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+.bgwithimage{
+    background-image: url("/1.jpg");
+    background-size: cover;
 }

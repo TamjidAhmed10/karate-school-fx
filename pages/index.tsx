@@ -3,6 +3,12 @@ import Head from 'next/head'
 import Navbar from '../Components/Navbar'
 import Caurosal2 from "../Components/Caurosal2"
 import Details from '../Components/Details'
+import JoinUs from '../Components/JoinUs'
+import Team from '../Components/Team'
+import FAQ from '../Components/FAQ'
+import Partners from '../Components/Partners'
+import Footer from '../Components/Footer'
+import Shop from '../Components/Shop'
 const Home: NextPage = () => {
   return (
     <div >
@@ -13,8 +19,13 @@ const Home: NextPage = () => {
       </Head>
       <Navbar />
       <Caurosal2 />
-      <Details/>
-    
+      <Partners/>
+      <Details />
+      <JoinUs />
+      <Team />
+      <Shop/>
+      <FAQ/>
+      <Footer/>
     </div>
   )
 }
