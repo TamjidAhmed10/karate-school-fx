@@ -2,7 +2,7 @@ import Navbar from "../Components/Navbar";
 const Instructor = () => {
     return (
       <div>
-        <Navbar />
+        <Navbar /> 
       </div>
     );
 }
