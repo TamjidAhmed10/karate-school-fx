@@ -2,57 +2,36 @@ import Image from "next/image";
 const Test = () => {
   return (
     <div>
-      <div className="hero p-10">
-        <div className="flex-col hero-content lg:flex-row-reverse">
-          <img
-            src="http://karateschool.se/images/instructor/instructor-1.jpg"
-            className=" rounded-lg shadow-2xl"
-          />
-          <div>
-            <h1 className="mb-2 text-3xl font-bold text-center">
-              Nour Aldin Alkurdi (SENPAI)
-            </h1>
-            <p className="mb-5 text-center">
-              He started karate in 2007 and received 2nd Dan in Shotokan style.
-              2014 he stood 2nd place in Asain Karate Championship in Malaysia.
-              He received many national and international medals. Before he
-              moved to Sweden he was in Syrian national team. Besides Karate he
-              is training artistic gymnastics.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div className="hero p-10">
-        <div className="flex-col  hero-content lg:flex-row-reverse">
-          <div>
-            <h1 className="mb-2 text-3xl font-bold text-center">
-              Shirin Davarpanah Jazi (SENPAI)
-            </h1>
-            <p className="mb-5 text-center">
-              Shirin Davarpanah Jazi was born in Iran in 1985 and began her
-              Karate training in 1992. Over the years she has trained with
-              amazing instructors in Shotokan and Shitoryu styles in England,
-              Iran and Canada. During the 2000’s she was a successful athlete at
-              the provincial, national and international levels. In 2002 she
-              started officiating and became the first Iranian female to receive
-              international officiating degree. By 2010 she transitioned into
-              coaching and managed her own club before immigrating to Canada. In
-              Canada she continued her passion for officiating and received her
-              Canadian and PanAmerican officiating degrees. Before relocating to
-              Sweden, she trained under the guidance of Kyoshi Allen Tanzadeh
-              (8th Dan, Shitoryu) in Canada. Shirin currently holds 5th Dan
-              black belt in Shotokan and 1st Dan black belt in Shitoryu. Apart
-              from her Karate career, Shirin has completed a PhD in Human
-              Neuroscience, as well as being a physiotherapist. She is an expert
-              in human movement and physical fitness.
-            </p>
-          </div>
-          <img
-            src="http://karateschool.se/images/instructor/instructor-1.jpg"
-            className=" rounded-lg shadow-2xl"
-          />
-        </div>
-      </div>
+      <h1>Saga of a Born Competitor</h1>
+      <img
+        src="http://karateschool.se/images/instructor/1606100131.jpg"
+        alt=""
+      />
+      <p>
+        Sensei Shahnawaz Jinnah has several winning title in different
+        tournaments both in national and international stages. He joined Danish
+        Karate Federation in late 90's. He received his 4th Dan in 2008 and 5th
+        Dan in 2015 there. He represented Danish National Team. He won Silver in
+        Europen Masters Championship in 2008 and Gold in Masters Class (Kata) in
+        2014 & 2015 in Danish Championship (DM). He also won Silver in the same
+        tournament (DM) in 2016. He became European Champion (kata Master class)
+        in SKIF karate Championship which was held in Czec Republic in 2017.
+        Sensei Jinnah represented Swedish National Team in international
+        competitions.
+      </p>
+      <img
+        src="http://karateschool.se/images/instructor/competitor-1.jpg"
+        alt=""
+      />
+      <p>
+        Sensei Shahnawaz Jinnah won Silver and Gold (both kata and kumitte) in
+        the 3rd Asian championship which was held in Delhi (India) in 1994. He
+        won Gold in kata in 1995 National Karate Championship of Bangladesh.
+        Sensei Jinnah competed in World Cup SKIF Karate Championship which was
+        held in Indonasia 2016, and took 4th place in Kata He was the chief
+        instructor for Musashi Shotokan Karate Club in Denmark for several
+        years.
+      </p>
     </div>
   );
 };
