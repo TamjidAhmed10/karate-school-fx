@@ -44,8 +44,8 @@ const Navbar: React.FC = () => {
             <Image
               src="/mainlogo.png"
               alt="Picture of the author"
-              width={48}
-              height={48}
+              width={68}
+              height={68}
               className=" object-contain "
             />
 

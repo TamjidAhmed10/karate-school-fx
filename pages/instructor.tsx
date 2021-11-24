@@ -1,8 +1,12 @@
+import Instructors from "../Components/Instructors";
 import Navbar from "../Components/Navbar";
+import Sense from "../Components/Sense";
 const Instructor = () => {
     return (
       <div>
-        <Navbar /> 
+            <Navbar />
+            <Instructors />
+            <Sense/>
       </div>
     );
 }

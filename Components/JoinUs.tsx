@@ -2,7 +2,7 @@ const JoinUs = () => {
   return (
     <div
       style={{
-        backgroundImage: "url(" + "/1.jpg" + ")",
+        backgroundImage: "url(/1.jpg)",
         backgroundPosition: "center",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
@@ -15,19 +15,14 @@ const JoinUs = () => {
         }}
       >
         <div className="text-center  w-96  mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 z-20">
-          <h2 className="text-3xl  font-extrabold text-black dark:text-white sm:text-3xl">
+          <h2 className="text-3xl  font-extrabold text-white  sm:text-2xl">
             <span
-              className="block shadow-2xl	"
-              style={{ textShadow: "3px 3px 6px white" }}
-            >
-              I am Shajniyaz Jinnah
-            </span>
-            <span
-              className="block text-white"
+              className="block  	"
               style={{ textShadow: "3px 3px 6px black" }}
             >
-              Its today or never.
+              I am Shahnawaz Jinnah
             </span>
+          
           </h2>
           <div
             className="text-xl mt-4  max-w-md mx-auto text-red-900 font-bold	  "
