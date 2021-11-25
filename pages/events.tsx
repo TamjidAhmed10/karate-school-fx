@@ -1,3 +1,7 @@
+import Footer from "../Components/Footer";
+import Instructors from "../Components/Instructors";
+import Navbar from "../Components/Navbar";
+
 const data = [
   {
     heading: "Our international branch in India-Assam",
@@ -20,9 +24,12 @@ const data = [
   },
 ];
 
-const Test = () => {
+const Events = () => {
   return (
-    <div>
+      <div>
+          <Navbar />
+          <Instructors writings="News and Events" />
+          <h1 className="text-4xl text-center py-4 bg-gray-300">News and Events</h1>
       {data &&
         data.map((datas, i) => (
           <div key={i} className=" w-11/12 md:w-9/12 my-4 mx-auto ">
@@ -54,8 +61,9 @@ const Test = () => {
             </section>
           </div>
         ))}
+          <Footer/>
     </div>
   );
 };
 
-export default Test;
+export default Events;
