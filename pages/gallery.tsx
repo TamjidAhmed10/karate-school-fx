@@ -14,18 +14,17 @@ import Navbar from "../Components/Navbar";
 import useStore from "../zust/zustfig";
 import Instructors from "../Components/Instructors";
 import Footer from "../Components/Footer";
-const ImagesLists = () => {
-  // const [toggle, setToggle] = useState(false);
-  const { toggle, setToggle } = useStore();
-  const [urlLink, setUrlLink] = useState("");
-  const breakpointColumnsObj = {
-    default: 4,
-    1100: 3,
-    700: 2,
-    500: 1,
-  };
+const Gallery = () => {
+     const { toggle, setToggle } = useStore();
+     const [urlLink, setUrlLink] = useState("");
+     const breakpointColumnsObj = {
+       default: 4,
+       1100: 3,
+       700: 2,
+       500: 1,
+     };
   return (
-    <>
+    <div>
       <div>
         <Navbar />
         <Instructors writings="Gallery" />
@@ -68,10 +67,10 @@ const ImagesLists = () => {
             </div>
           )}
         </div>
-              <Footer/>
+        <Footer />
       </div>
-    </>
+    </div>
   );
 };
 
-export default ImagesLists;
+export default Gallery;

@@ -6,7 +6,12 @@ import { ImCross } from "react-icons/im";
 import { useWindowSize } from "react-use";
 import Image from "next/image";
 
+import useStore from "../zust/zustfig";
+
+
 const Navbar: React.FC = () => {
+    const { toggle } = useStore();
+
   const [isOpen, setIsOpen] = useState(false);
   const { isScrollingUp, isScrollingDown } = useScrollDirection();
   const [direction, setDirection] = useState(true);
@@ -30,6 +35,7 @@ const Navbar: React.FC = () => {
     <>
       <div
         className={
+          toggle? "invisible":
           "custombgcolor border-b-2  sticky z-10  ease-in-out duration-700 " +
           (direction ? " top-0 " : " -top-36 ")
         }

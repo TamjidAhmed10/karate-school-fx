@@ -3,7 +3,8 @@ const Instructors = (props: any) => {
       <div className="">
         <div
           style={{
-            backgroundImage: "url(/fix1.png)",
+            backgroundImage:
+              "url(https://res.cloudinary.com/del5cgyhh/image/upload/v1637813633/fix1_jqjxwf.png)",
             backgroundPosition: "center",
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
@@ -25,7 +26,7 @@ const Instructors = (props: any) => {
                   textShadow: "2px 2px 4px #000000",
                 }}
               >
-               {props.writings}
+                {props.writings}
               </h2>
             </div>
           </div>

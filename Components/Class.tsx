@@ -55,6 +55,12 @@ const Class = (props: any) => {
             </div>
           </div>
         </div>
+        <div className="text-center p-10">
+          <h2 className="text-2xl font-bold ">Friday</h2>
+          <h3 className="text-2xl ">Body Carate</h3>
+          <h4 className="text-xl py-1">From 17:00 to 18:00 (Mix training)</h4>
+          <button className="btn  btn-info ">Register</button>
+        </div>
       </div>
     );
 }
