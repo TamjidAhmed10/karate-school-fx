@@ -30,39 +30,42 @@ const data = {
         Shotokan Karate-do International Federation(SKIF) - Denmark",
 };
 
-const Test2 = () => {
+const HistoryComp = () => {
   return (
-    <div className=" md:w-9/12 mx-auto">
-      <h1 className="text-center text-3xl py-6">History of Shotokan Karate</h1>
-      <img src={data.imagelink} alt="" className="  " />
-      <p className=" text-justify text-lg p-4  whitespace-pre-wrap">
-        {data.blogpost}
-      </p>
-      <h1 className="text-center text-3xl pt-10">
-        LIMHAMNS SHOTOKAN KARATE KLUBB (LSKK)
-      </h1>
-      <p className="text-lg p-4 text-center">
-        (a member of School of Shotokan Karate)
-      </p>
-      <img
-        src={data.imagelinkoflskk}
-        alt=""
-        className="w-full h-64 object-contain"
-      />
-      <p className="text-lg p-4 text-justify">
-        In 2017 Sensei Shahnawaz Jinnah established School of Shotokan karate-do
-        with Colobri KFUK-KFUM, in 2020 Sensei Jinnah started a new förening:
-        Limhamns Shotokan Karateklubb, org nr. 802522-6781.This karate club is
-        affiliated by Swedish Karate Federation (Svensk Karate förbundet), Skåne
-        Karate Förbundet, and RF-SISU. It has also international affiliation by
-        Shotokan Karate-do International Federation(SKIF) - Denmark
-      </p>
-      <h1 className="text-center text-3xl pt-10">BODY KARATE</h1>
-      <p className="text-lg p-4 text-justify">
-        {data.bodycarateData}
-      </p>  
+    <div>
+      <div className=" md:w-9/12 mx-auto">
+        <h1 className="text-center text-3xl py-6">
+          History of Shotokan Karate
+        </h1>
+        <img src={data.imagelink} alt="" className="  " />
+        <p className=" text-justify text-lg p-4  whitespace-pre-wrap">
+          {data.blogpost}
+        </p>
+        <h1 className="text-center text-3xl pt-10">
+          LIMHAMNS SHOTOKAN KARATE KLUBB (LSKK)
+        </h1>
+        <p className="text-lg p-4 text-center">
+          (a member of School of Shotokan Karate)
+        </p>
+        <img
+          src={data.imagelinkoflskk}
+          alt=""
+          className="w-full h-64 object-contain"
+        />
+        <p className="text-lg p-4 text-justify">
+          In 2017 Sensei Shahnawaz Jinnah established School of Shotokan
+          karate-do with Colobri KFUK-KFUM, in 2020 Sensei Jinnah started a new
+          förening: Limhamns Shotokan Karateklubb, org nr. 802522-6781.This
+          karate club is affiliated by Swedish Karate Federation (Svensk Karate
+          förbundet), Skåne Karate Förbundet, and RF-SISU. It has also
+          international affiliation by Shotokan Karate-do International
+          Federation(SKIF) - Denmark
+        </p>
+        <h1 className="text-center text-3xl pt-10">BODY KARATE</h1>
+        <p className="text-lg p-4 text-justify">{data.bodycarateData}</p>
+      </div>
     </div>
   );
 };
 
-export default Test2;
+export default HistoryComp;
