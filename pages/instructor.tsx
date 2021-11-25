@@ -9,7 +9,7 @@ const Instructor = () => {
   return (
     <div>
       <Navbar />
-      <Instructors />
+      <Instructors writings={"Instructors"} />
       <Sense />
       <Senpie />
       <Saga />

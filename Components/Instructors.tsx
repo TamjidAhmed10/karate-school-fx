@@ -1,4 +1,4 @@
-const Instructors = () => {
+const Instructors = (props: any) => {
     return (
       <div className="">
         <div
@@ -25,7 +25,7 @@ const Instructors = () => {
                   textShadow: "2px 2px 4px #000000",
                 }}
               >
-                INSTRUCTORS
+               {props.writings}
               </h2>
             </div>
           </div>

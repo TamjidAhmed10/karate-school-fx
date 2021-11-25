@@ -1,21 +1,40 @@
 import Image from "next/image";
+import Class from "../Components/Class";
+import Instructors from "../Components/Instructors";
 const Test = () => {
   return (
     <div>
-      <h1 className=" text-3xl text-center mt-4">Role as a Referee and Mentor</h1>
-      <p className=" text-justify mx-28 mt-4">
-        Sensei Shahnawaz Jinnah is a registered referee for Danish Karate
-        Federation and Shotokan Karate International Federation. He is a B
-        license (kumitte) holder from DKF (Danish Karate Federation), judge A
-        (in Kata) and referee B license from SKIF (Europe). Sensei Shahnawaz
-        Jinnah also provides mentoring for professional karate players and clubs
-        in Sweden & Denmark. His experience with other legendary karate
-        instructors makes him unique as a mentor for all types of learners and
-        organization. His Limhamns Shotokan Karate Klubb (LSKK) also provides
-        affiliation to other organizations worldwide. At present Limhamns
-        Shotokan Karate Klubb (LSKK) Assam and Bangladesh Karate Academy are
-        running under affiliation of Sensei Shahnawaz Jinnah.
-      </p>
+      <Instructors writings="Class" />
+      <Class>
+        <div className="w-11/12 mx-auto">
+          <p className=" text-justify py-2">
+            Our classes and sessions are designed for both adults and children.
+            More than 30 years of experience in both national and international
+            Karate organizations helps us to care for the need of individual
+            learners of different age groups. From school children to corporate
+            professionals, Limhamns Shotokan Karate Klubb (LSKK) is suitable for
+            all. We also provide training sessions for professionals who want to
+            take part in national and international competitions as an
+            individual or as a team.
+          </p>
+          <p className="py-2">
+            We train BODY KARATE every Friday (from 30 years to above). To train
+            BODY KARATE you do not need any former experience. It is mixed with
+            all kinds of punches and blocks, kicks, yoga, aerobics, and some
+            cardio workout. In general, it is perfect training for both body
+            conditions and fitness. Just come and join.
+          </p>
+          <p className="text-center py-2 ">
+            We have divided our training schudle in two terms:
+          </p>
+          <p className="text-center py-2">
+            Vårterminen (spring term)- January to June
+          </p>
+          <p className="text-center py-2">
+            Höstterminen (Autum term)- August to December
+          </p>
+        </div>
+      </Class>
     </div>
   );
 };
