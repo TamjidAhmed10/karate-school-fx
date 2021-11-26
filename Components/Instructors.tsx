@@ -16,7 +16,7 @@ const Instructors = (props: any) => {
               backgroundColor: "rgba(109, 104, 117, .45)",
             }}
           >
-            <div className=" w-full h-52 z-20 relative">
+            <div className=" w-full h-52 z-0 relative">
               <h2
                 className=" text-3xl lg:text-4xl pl-8 lg:pl-24 font-bold text-yellow-50"
                 style={{

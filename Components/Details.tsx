@@ -1,8 +1,26 @@
 /* eslint-disable @next/next/no-img-element */
+const data = {
+  logo: [{ logos: "" }, { logos: "" }],
+  firstTopicPhoto: "",
+  firstTopicBlog: "",
+  secondTopicPhoto: "",
+  secondTopicBlog: "",
+  thirdTopicPhoto: "",
+  thirdTopicBlog: "",
+  professionalTeamFirstImage: "",
+  professionalTeamSecondImage: "",
+  professionalTeamThirdImage: "",
+  professionalTeamFirstRole: "",
+  professionalTeamSecondRole: "",
+  professionalTeamThirdRole: "",
+  professionalTeamFirstDescription: "",
+  professionalTeamSecondDescription: "",
+  professionalTeamThirdDescription: "",
+};
 const Details = () => {
   return (
     <div style={{ backgroundColor: "#F5FAB9" }}>
-      <h1 className=" mt-10 text-center text-4xl" style={{ color: "#6E7600" }}>
+      <h1 className=" mt-10 text-center text-4xl" style={{ color: "#847B00" }}>
         Limhamns Shotokan Karate Klubb (LSKK)
       </h1>
       <div className="grid gird-cols-1 md:grid-cols-2 p-5">

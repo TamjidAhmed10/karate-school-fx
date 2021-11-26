@@ -3,8 +3,11 @@ const Partners = () => {
       <div>
         <section className="pt-7 pb-14" style={{ backgroundColor: "#FDFFDE " }}>
           <div className="container px-8 mx-auto sm:px-12 lg:px-20">
-            <h1 className="text-sm font-bold tracking-wide text-center text-gray-800 uppercase mb-7">
-              Trusted by top-leading companies.
+            <h1
+              className="text-2xl font-bold tracking-wide text-center  uppercase mb-7"
+              style={{ color: "#847B00" }}
+            >
+              Affiliated at Home and Abroad
             </h1>
             <div className=" grid items-center justify-center grid-cols-6  gap-y-8">
               <div className="flex items-center justify-center col-span-6 sm:col-span-4 md:col-span-3 xl:col-span-2">

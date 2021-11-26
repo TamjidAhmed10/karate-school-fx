@@ -20,9 +20,7 @@ const Caurosal2 = () => {
               alt="Image 1"
               className="object-cover  w-full block"
             />
-            <div className="caption p-4">
-              ACTION-SOCHIN <br /> Action in Sochin
-            </div>
+            
           </div>
         </SplideSlide>
         <SplideSlide>

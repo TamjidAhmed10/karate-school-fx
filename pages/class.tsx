@@ -2,10 +2,12 @@ import React from "react";
 import Instructors from "../Components/Instructors"
 import Class from "../Components/Class"
 import Payment from "../Components/Payment";
+import Navbar from "../Components/Navbar";
+import Footer from "../Components/Footer";
 const ClassAndService = () => {
     return (
       <div>
-       
+        <Navbar />
         <Instructors writings="Class" />
         <Class>
           <div className="w-11/12 mx-auto">
@@ -39,6 +41,7 @@ const ClassAndService = () => {
         </Class>
 
         <Payment />
+        <Footer/>
       </div>
     );
 }
