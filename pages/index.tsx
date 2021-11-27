@@ -1,17 +1,20 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Navbar from '../Components/Navbar'
-import Caurosal2 from "../Components/Caurosal2"
-import Details from '../Components/Details'
-import JoinUs from '../Components/JoinUs'
-import Team from '../Components/Team'
-import FAQ from '../Components/FAQ'
-import Partners from '../Components/Partners'
-import Footer from '../Components/Footer'
-import Shop from '../Components/Shop'
-import Class from '../Components/Class'
-import Payment from '../Components/Payment'
-const Home: NextPage = () => {
+import type { NextPage } from "next";
+import Head from "next/head";
+import Navbar from "../Components/Navbar";
+import Caurosal2 from "../Components/Caurosal2";
+import Details from "../Components/Details";
+import JoinUs from "../Components/JoinUs";
+import Team from "../Components/Team";
+import FAQ from "../Components/FAQ";
+import Partners from "../Components/Partners";
+import Footer from "../Components/Footer";
+import Shop from "../Components/Shop";
+import Class from "../Components/Class";
+import Payment from "../Components/Payment";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../firebase-config/firebase-config";
+
+const Home: NextPage = (props: any) => {
   return (
     <div style={{ backgroundColor: "#F8FCC2" }}>
       <Head>
@@ -21,7 +24,7 @@ const Home: NextPage = () => {
       </Head>
       <Navbar />
       <Caurosal2 />
-      <Partners />
+      <Partners data={props.finalLogoData} />
       <Details />
       <JoinUs />
       <Team />
@@ -32,6 +35,21 @@ const Home: NextPage = () => {
       <Footer />
     </div>
   );
-}
+};
 
-export default Home
+export default Home;
+
+export async function getStaticProps() {
+  const collectionRef = collection(db, "logos-associated");
+  const logodata: any = await getDocs(collectionRef);
+  const finalLogoData = logodata.docs.map(
+    (doc: { data: () => any; id: any }) => ({
+      ...doc.data(),
+      id: doc.id,
+    })
+  );
+
+  return {
+    props: { finalLogoData }, // will be passed to the page component as props
+  };
+}
