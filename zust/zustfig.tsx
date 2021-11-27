@@ -6,6 +6,8 @@ interface proptypes {
   setImageReturnUrl: any;
   toggle: any;
   setToggle: any;
+  formdata: any;
+  setFormdata: any;
 }
 const useStore = create<proptypes>((set) => ({
   selectedFileName: {},
@@ -22,6 +24,11 @@ const useStore = create<proptypes>((set) => ({
   setToggle: (toggle: any) =>
     set((state) => ({
       toggle,
+    })),
+  formdata: "",
+  setFormdata: (formdata: any) =>
+    set((state) => ({
+      formdata,
     })),
 }));
 export default useStore;

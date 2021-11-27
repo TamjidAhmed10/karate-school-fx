@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase-config/firebase-config";
-const Test = () => {
+const TableOf = () => {
   const [users, setUsers] = useState([]);
   const collectionRef = collection(db, "membersx");
+
   useEffect(() => {
     const getUsers = async () => {
       const data: any = await getDocs(collectionRef);
@@ -52,9 +53,8 @@ const Test = () => {
           </tbody>
         </table>
       </div>
-     
     </div>
   );
 };
 
-export default Test;
+export default TableOf;
