@@ -11,7 +11,7 @@ const Memberform = () => {
     const fireStoreFun = async () => {
       if (formdata != "") {
         await addDoc(usersCollectionRef, formdata);
-        console.log("done");
+        
       }
     };
     fireStoreFun();

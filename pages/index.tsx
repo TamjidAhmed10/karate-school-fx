@@ -25,7 +25,7 @@ const Home: NextPage = (props: any) => {
       <Navbar />
       <Caurosal2 />
       <Partners data={props.finalLogoData} />
-      <Details />
+      <Details data={props.finalClubData} />
       <JoinUs />
       <Team />
       <Shop />
@@ -48,8 +48,17 @@ export async function getStaticProps() {
       id: doc.id,
     })
   );
+  const collectionRefClubDetails = collection(db, "clubwritings");
+  const clubwritingsData: any = await getDocs(collectionRefClubDetails);
+  const finalClubData = clubwritingsData.docs.map(
+    (doc: { data: () => any; id: any }) => ({
+      ...doc.data(),
+      id: doc.id,
+    })
+  );
+
 
   return {
-    props: { finalLogoData }, // will be passed to the page component as props
+    props: { finalLogoData, finalClubData }, // will be passed to the page component as props
   };
 }

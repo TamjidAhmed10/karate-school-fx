@@ -2,7 +2,7 @@
 import { Key } from "react";
 
 const Partners = ({ data }: any) => {
-  console.log(data);
+  
   return (
     <div>
       <section className="pt-7 pb-14" style={{ backgroundColor: "#FDFFDE " }}>

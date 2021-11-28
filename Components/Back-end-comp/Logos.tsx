@@ -8,6 +8,8 @@ import {
   deleteDoc,
   doc,
 } from "firebase/firestore";
+
+
 import { db } from "../../firebase-config/firebase-config";
 import { TiTick } from "react-icons/ti";
 import { useState, useEffect } from "react";
@@ -70,6 +72,7 @@ const Logos = () => {
   }, [updateAll]);
   return (
     <div>
+      
       <div className="w-11/12 mx-auto">
         <h1 className="text-3xl text-center bg-gray-200">Home Page Settings</h1>
         <h2 className="text-3xl text-center bg-gray-400">Logo Settings</h2>
@@ -119,7 +122,8 @@ const Logos = () => {
                   </tr>
                 );
               })}
-              <th>INPUT</th>
+              <tr>
+<th>INPUT</th>
               <td>
                 <input
                   type="text"
@@ -152,6 +156,8 @@ const Logos = () => {
                   </div>
                 </div>
               </td>
+              </tr>
+              
             </tbody>
           </table>
         </div>
