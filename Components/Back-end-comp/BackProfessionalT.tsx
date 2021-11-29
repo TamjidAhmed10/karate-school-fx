@@ -1,21 +1,95 @@
 /* eslint-disable @next/next/no-img-element */
-import { Key, useState } from "react";
+import { Key, SetStateAction, useState } from "react";
 import Link from "next/link";
+import {
+  collection,
+  getDocs,
+  addDoc,
+  updateDoc,
+  deleteDoc,
+  doc,
+} from "firebase/firestore";
+import { db } from "../../firebase-config/firebase-config";
+import { useRouter } from "next/router";
+
 const BackProfessionalT = ({ data }: any) => {
+  const router = useRouter();
+  const data1 = data;
+  const refreshData = () => {
+    router.reload();
+  };
+
   const [toggle, setToggle] = useState(false);
-  const [name, setname] = useState("");
+  const [addNewToggle, setAddNewToggle] = useState(false);
+  const [name, setName] = useState("");
   const [role, setRole] = useState("");
   const [smallDescription, setSmallDescription] = useState("");
   const [facebookLink, setFacebookLink] = useState("");
   const [twitterLink, setTwitterLink] = useState("");
   const [linkedInLink, setLinkedInLink] = useState("");
-
-  const updateModal = () => {
+  const [imageLink, setImageLink] = useState("");
+  const [id, setID] = useState("");
+  const uploadModal = () => {};
+  const closeAddModal = () => {
+    setAddNewToggle(false);
+  };
+  const updateModal = async () => {
+    setToggle(() => {
+      return !toggle;
+    });
+    const newField = {
+      name: name,
+      role: role,
+      details: smallDescription,
+      facebooklink: facebookLink,
+      twitterlink: twitterLink,
+      linkedinlink: linkedInLink,
+      imagelink: imageLink,
+    };
+    const userDoc = doc(db, "professionalTeam", id);
+    await updateDoc(userDoc, newField).then(() => {
+      setID("");
+      setName("");
+      setImageLink("");
+      setRole("");
+      setFacebookLink("");
+      setLinkedInLink("");
+      setTwitterLink("");
+      setSmallDescription("");
+      refreshData();
+    });
+  };
+  const closeModal = () => {
+    setID("");
+    setName("");
+    setImageLink("");
+    setRole("");
+    setFacebookLink("");
+    setLinkedInLink("");
+    setTwitterLink("");
+    setSmallDescription("");
     setToggle(() => {
       return !toggle;
     });
   };
-  const closeModal = () => {
+  const openModal = (
+    id: SetStateAction<string>,
+    name: SetStateAction<string>,
+    imagelink: SetStateAction<string>,
+    role: SetStateAction<string>,
+    facebooklink: SetStateAction<string>,
+    linkedinlink: SetStateAction<string>,
+    twitterlink: SetStateAction<string>,
+    details: SetStateAction<string>
+  ) => {
+    setID(id);
+    setName(name);
+    setImageLink(imagelink);
+    setRole(role);
+    setFacebookLink(facebooklink);
+    setLinkedInLink(linkedinlink);
+    setTwitterLink(twitterlink);
+    setSmallDescription(details);
     setToggle(() => {
       return !toggle;
     });
@@ -34,7 +108,7 @@ const BackProfessionalT = ({ data }: any) => {
 
           <div className="">
             <div className="grid grid-cols-1 md:grid-cols-3  items-center mx-auto">
-              {data.map((item: any, i: Key | null | undefined) => {
+              {data1.map((item: any, i: Key | null | undefined) => {
                 return (
                   <div className="p-4" key={i}>
                     <div className="text-center mb-4 opacity-90">
@@ -101,7 +175,18 @@ const BackProfessionalT = ({ data }: any) => {
                       <a
                         href="#my-modal"
                         className="btn btn-primary btn-sm"
-                        onClick={closeModal}
+                        onClick={() => {
+                          openModal(
+                            item.id,
+                            item.name,
+                            item.imagelink,
+                            item.role,
+                            item.facebooklink,
+                            item.linkedinlink,
+                            item.twitterlink,
+                            item.details
+                          );
+                        }}
                       >
                         Edit
                       </a>
@@ -126,6 +211,10 @@ const BackProfessionalT = ({ data }: any) => {
                                       </label>
                                       <input
                                         type="text"
+                                        value={name}
+                                        onChange={(e) => {
+                                          setName(e.target.value);
+                                        }}
                                         className="block w-full p-1 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
                                       />
                                     </span>
@@ -135,7 +224,8 @@ const BackProfessionalT = ({ data }: any) => {
                                   </label>
                                   <input
                                     type="text"
-                                    name="email"
+                                    value={role}
+                                    onChange={(e) => setRole(e.target.value)}
                                     className="block w-full p-1 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
                                   />
                                   <label className="block mt-2 text-xs font-semibold text-gray-600 uppercase">
@@ -143,6 +233,10 @@ const BackProfessionalT = ({ data }: any) => {
                                   </label>
                                   <input
                                     type="text"
+                                    value={smallDescription}
+                                    onChange={(e) =>
+                                      setSmallDescription(e.target.value)
+                                    }
                                     className="block w-full p-1 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
                                   />
                                   <label className="block text-xs font-semibold text-gray-600 uppercase">
@@ -150,6 +244,10 @@ const BackProfessionalT = ({ data }: any) => {
                                   </label>
                                   <input
                                     type="text"
+                                    value={facebookLink}
+                                    onChange={(e) =>
+                                      setFacebookLink(e.target.value)
+                                    }
                                     className="block w-full p-1 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
                                   />
                                   <label className="block text-xs font-semibold text-gray-600 uppercase">
@@ -157,6 +255,10 @@ const BackProfessionalT = ({ data }: any) => {
                                   </label>
                                   <input
                                     type="text"
+                                    value={twitterLink}
+                                    onChange={(e) =>
+                                      setTwitterLink(e.target.value)
+                                    }
                                     className="block w-full p-1 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
                                   />
                                   <label className="block text-xs font-semibold text-gray-600 uppercase">
@@ -164,6 +266,10 @@ const BackProfessionalT = ({ data }: any) => {
                                   </label>
                                   <input
                                     type="text"
+                                    value={linkedInLink}
+                                    onChange={(e) =>
+                                      setLinkedInLink(e.target.value)
+                                    }
                                     className="block w-full p-1 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
                                   />
 
@@ -190,6 +296,111 @@ const BackProfessionalT = ({ data }: any) => {
                 );
               })}
             </div>
+            {addNewToggle && (
+              <div>
+                <div id="addSpan" className="modal">
+                  <div className="modal-box">
+                    <div className="grid min-h-screen place-items-center">
+                      <div className="w-11/12 bg-white">
+                        <h1 className="text-xl font-semibold">
+                          Hello there 👋,
+                          <span className="font-normal">
+                            please fill in your information to continue
+                          </span>
+                        </h1>
+                        <form className="mt-6">
+                          <div className="flex justify-between gap-3">
+                            <span className="w-full">
+                              <label className="block text-xs font-semibold text-gray-600 uppercase">
+                                Name
+                              </label>
+                              <input
+                                type="text"
+                                placeholder="Enter A Name"
+                                onChange={(e) => {
+                                  setName(e.target.value);
+                                }}
+                                className="block w-full p-1 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                              />
+                            </span>
+                          </div>
+                          <label className="block mt-2 text-xs font-semibold text-gray-600 uppercase">
+                            Role
+                          </label>
+                          <input
+                            type="text"
+                            placeholder="Enter Your Role"
+                            onChange={(e) => setRole(e.target.value)}
+                            className="block w-full p-1 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                          />
+                          <label className="block mt-2 text-xs font-semibold text-gray-600 uppercase">
+                            Details
+                          </label>
+                          <input
+                            type="text"
+                            placeholder="Enter Your Small Details"
+                            onChange={(e) =>
+                              setSmallDescription(e.target.value)
+                            }
+                            className="block w-full p-1 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                          />
+                          <label className="block text-xs font-semibold text-gray-600 uppercase">
+                            Facebook Link
+                          </label>
+                          <input
+                            type="text"
+                            placeholder="Enter Your Facebook Link"
+                            onChange={(e) => setFacebookLink(e.target.value)}
+                            className="block w-full p-1 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                          />
+                          <label className="block text-xs font-semibold text-gray-600 uppercase">
+                            Twitter Link
+                          </label>
+                          <input
+                            type="text"
+                            placeholder="Enter Your Twitter Link"
+                            onChange={(e) => setTwitterLink(e.target.value)}
+                            className="block w-full p-1 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                          />
+                          <label className="block text-xs font-semibold text-gray-600 uppercase">
+                            LinkedIn Link
+                          </label>
+                          <input
+                            type="text"
+                            placeholder="Enter Your LinkedIn Link"
+                            onChange={(e) => setLinkedInLink(e.target.value)}
+                            className="block w-full p-1 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                          />
+
+                          <button
+                            className="w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none"
+                            onClick={uploadModal}
+                          >
+                            Upload
+                          </button>
+                          <button
+                            className="w-full py-3 mt-2  font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none"
+                            onClick={closeAddModal}
+                          >
+                            Close
+                          </button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+            <a href="#addSpan">
+              <button
+                className="btn btn-sm"
+                onClick={() => {
+                  setAddNewToggle(true);
+                }}
+              >
+                Add New
+              </button>
+            </a>
           </div>
         </div>
       </div>
