@@ -18,7 +18,6 @@ const BackProfessionalT = ({ data }: any) => {
   const refreshData = () => {
     router.reload();
   };
-
   const [toggle, setToggle] = useState(false);
   const [addNewToggle, setAddNewToggle] = useState(false);
   const [name, setName] = useState("");
@@ -29,8 +28,31 @@ const BackProfessionalT = ({ data }: any) => {
   const [linkedInLink, setLinkedInLink] = useState("");
   const [imageLink, setImageLink] = useState("");
   const [id, setID] = useState("");
-  const uploadModal = () => {};
-  const closeAddModal = () => {
+  const userCollectorRef = collection(db, "professionalTeam");
+  const uploadModal = async () => {
+    const newField = {
+      name: name,
+      role: role,
+      details: smallDescription,
+      facebooklink: facebookLink,
+      twitterlink: twitterLink,
+      linkedinlink: linkedInLink,
+      imagelink: imageLink,
+    };
+    await addDoc(userCollectorRef, newField).then(() => {
+      setID("");
+      setName("");
+      setImageLink("");
+      setRole("");
+      setFacebookLink("");
+      setLinkedInLink("");
+      setTwitterLink("");
+      setSmallDescription("");
+      refreshData();
+    });
+    setAddNewToggle(false);
+  };
+  const closeAddModal = async () => {
     setAddNewToggle(false);
   };
   const updateModal = async () => {
@@ -320,20 +342,29 @@ const BackProfessionalT = ({ data }: any) => {
                                 onChange={(e) => {
                                   setName(e.target.value);
                                 }}
-                                className="block w-full p-1 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                className="block w-full p-1 mt-1 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
                               />
                             </span>
                           </div>
-                          <label className="block mt-2 text-xs font-semibold text-gray-600 uppercase">
+                          <label className="block mt-1 text-xs font-semibold text-gray-600 uppercase">
                             Role
                           </label>
                           <input
                             type="text"
                             placeholder="Enter Your Role"
                             onChange={(e) => setRole(e.target.value)}
-                            className="block w-full p-1 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                            className="block w-full p-1 mt-1 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
                           />
-                          <label className="block mt-2 text-xs font-semibold text-gray-600 uppercase">
+                          <label className="block mt-1 text-xs font-semibold text-gray-600 uppercase">
+                            Image
+                          </label>
+                          <input
+                            type="text"
+                            placeholder="Enter Your Image Link"
+                            onChange={(e) => setImageLink(e.target.value)}
+                            className="block w-full p-1 mt-1 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                          />
+                          <label className="block mt-1 text-xs font-semibold text-gray-600 uppercase">
                             Details
                           </label>
                           <input
@@ -342,16 +373,17 @@ const BackProfessionalT = ({ data }: any) => {
                             onChange={(e) =>
                               setSmallDescription(e.target.value)
                             }
-                            className="block w-full p-1 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                            className="block w-full p-1 mt-1 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
                           />
                           <label className="block text-xs font-semibold text-gray-600 uppercase">
                             Facebook Link
                           </label>
                           <input
-                            type="text"
+                            type="url"
                             placeholder="Enter Your Facebook Link"
                             onChange={(e) => setFacebookLink(e.target.value)}
-                            className="block w-full p-1 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                            className="block w-full p-1 mt-1 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                            required
                           />
                           <label className="block text-xs font-semibold text-gray-600 uppercase">
                             Twitter Link
@@ -360,7 +392,7 @@ const BackProfessionalT = ({ data }: any) => {
                             type="text"
                             placeholder="Enter Your Twitter Link"
                             onChange={(e) => setTwitterLink(e.target.value)}
-                            className="block w-full p-1 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                            className="block w-full p-1 mt-1 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
                           />
                           <label className="block text-xs font-semibold text-gray-600 uppercase">
                             LinkedIn Link
@@ -373,6 +405,7 @@ const BackProfessionalT = ({ data }: any) => {
                           />
 
                           <button
+                            type="submit"
                             className="w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none"
                             onClick={uploadModal}
                           >
@@ -391,9 +424,10 @@ const BackProfessionalT = ({ data }: any) => {
                 </div>
               </div>
             )}
+
             <a href="#addSpan">
               <button
-                className="btn btn-sm"
+                className="btn btn-sm "
                 onClick={() => {
                   setAddNewToggle(true);
                 }}
