@@ -2,7 +2,6 @@
 import { Key } from "react";
 
 const Partners = ({ data }: any) => {
-  
   return (
     <div>
       <section className="pt-7 pb-14" style={{ backgroundColor: "#FDFFDE " }}>
@@ -18,8 +17,8 @@ const Partners = ({ data }: any) => {
               return (
                 <div className="flex items-center justify-center " key={i}>
                   <img
-                    src={item.logolink}
-                    alt={item.logoalt}
+                    src={item.logoname}
+                    alt={item.organizationname}
                     className="block object-contain h-28 "
                   />
                 </div>

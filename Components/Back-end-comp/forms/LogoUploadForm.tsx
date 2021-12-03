@@ -19,7 +19,6 @@ const LogoUploadForm = ({ changeToggle }: any) => {
     formState: { errors },
   } = useForm<FormData>();
   const onSubmit = async (data: FormData) => {
-    console.log(data);
     await addDoc(collectionRef, data).then(() => {
       router.replace(router.asPath);
       reset();

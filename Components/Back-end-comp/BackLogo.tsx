@@ -1,10 +1,32 @@
+/* eslint-disable @next/next/no-img-element */
 import { Key, useState } from "react";
 import Link from "next/link";
 import LogoUploadForm from "./forms/LogoUploadForm";
+import { doc, deleteDoc } from "firebase/firestore";
+import LogoEditForm from "./forms/LogoEditForm";
+import { db } from "../../firebase-config/firebase-config";
+import { useRouter } from "next/router";
 const BackLogo = ({ data }: any) => {
+  const router = useRouter();
   const [toogleUpload, setToogleUpload] = useState(false);
+  const [toogleEditData, setToogleEditData] = useState(false);
+  const [editDataOfItem, setEditDataOfItem] = useState("");
+
   const uploadData = () => {
     setToogleUpload(!toogleUpload);
+  };
+
+  const editData = (item: any) => {
+    console.log(item);
+    setToogleEditData(!toogleEditData);
+    setEditDataOfItem(() => {
+      return item;
+    });
+  };
+  
+  const deleteData = async (id: any) => {
+    const docRef = doc(db, "logos-associated", id);
+    await deleteDoc(docRef).then(() => router.replace(router.asPath));
   };
   return (
     <div>
@@ -23,14 +45,28 @@ const BackLogo = ({ data }: any) => {
                   <div className="flex items-center justify-center " key={i}>
                     <Link href="#" passHref>
                       <img
-                        src={item.logolink}
-                        alt={item.logoalt}
+                        src={item.logoname}
+                        alt={item.organizationname}
                         className="block object-contain h-28 "
                       />
                     </Link>
                     <div className="grid grid-cols-1 gap-4">
-                      <button className="btn btn-sm">Edit</button>
-                      <button className="btn btn-sm">Delete</button>
+                      <button
+                        className="btn btn-sm"
+                        onClick={() => {
+                          editData(item);
+                        }}
+                      >
+                        Edit
+                      </button>
+                      <button
+                        className="btn btn-sm"
+                        onClick={() => {
+                          deleteData(item.id);
+                        }}
+                      >
+                        Delete
+                      </button>
                     </div>
                   </div>
                 );
@@ -50,6 +86,14 @@ const BackLogo = ({ data }: any) => {
               />
             ) : (
               ""
+            )}
+            {toogleEditData && (
+              <LogoEditForm
+                data1={editDataOfItem}
+                changeToggleEdit={(
+                  toogleEditData: boolean | ((prevState: boolean) => boolean)
+                ) => setToogleEditData(toogleEditData)}
+              />
             )}
           </div>
         </section>
