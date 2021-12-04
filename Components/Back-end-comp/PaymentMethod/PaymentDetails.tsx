@@ -2,9 +2,9 @@ import { useForm } from "react-hook-form";
 import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../../../firebase-config/firebase-config";
 import { useRouter } from "next/router";
-const ProfessionalForm = ({ data1, changeToggleEdit }: any) => {
+const PaymentDetails = ({ data1, changeToggleEdit }: any) => {
   const router = useRouter();
-  const docummentRef = doc(db, "lsskdetails", data1.id);
+  const docummentRef = doc(db, "paymentmethod", data1.id);
   const {
     register,
     handleSubmit,
@@ -38,99 +38,21 @@ const ProfessionalForm = ({ data1, changeToggleEdit }: any) => {
                     htmlFor="lastname"
                     className="block text-xs font-semibold text-gray-600 uppercase"
                   >
-                    Name
+                    IBAN
                   </label>
                   <input
                     placeholder="Image link"
                     className="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-                    {...register("name", {
+                    {...register("ibanid", {
                       required: "true",
                     })}
                   />
-                  {errors.name && (
+                  {errors.ibanid && (
                     <span
                       role="alert"
                       className="text-red-600 font-bold text-sm"
                     >
                       This Cant be Empty
-                    </span>
-                  )}
-                </span>
-              </div>
-              <div className="mt-4">
-                <span className="w-full">
-                  <label
-                    htmlFor="lastname"
-                    className="block text-xs font-semibold text-gray-600 uppercase"
-                  >
-                    Image Adress
-                  </label>
-                  <input
-                    placeholder="Image link"
-                    className="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-                    {...register("imagelink", {
-                      required: "true",
-                      pattern: {
-                        value: /https?:\/\/.*/,
-                        message: "Entered value does not match link format",
-                      },
-                    })}
-                  />
-                  {errors.imagelink && (
-                    <span
-                      role="alert"
-                      className="text-red-600 font-bold text-sm"
-                    >
-                      {errors.imagelink.message}
-                    </span>
-                  )}
-                </span>
-              </div>
-              <div className="mt-4">
-                <span className="w-full">
-                  <label
-                    htmlFor="lastname"
-                    className="block text-xs font-semibold text-gray-600 uppercase"
-                  >
-                    Role
-                  </label>
-                  <textarea
-                    placeholder="Image link"
-                    className="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-                    {...register("role", {
-                      required: "true",
-                    })}
-                  />
-                  {errors.role && (
-                    <span
-                      role="alert"
-                      className="text-red-600 font-bold text-sm"
-                    >
-                      This cant be empty
-                    </span>
-                  )}
-                </span>
-              </div>
-              <div className="mt-4">
-                <span className="w-full">
-                  <label
-                    htmlFor="lastname"
-                    className="block text-xs font-semibold text-gray-600 uppercase"
-                  >
-                    Details
-                  </label>
-                  <textarea
-                    className="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-                    {...register("details", {
-                      required: "true",
-                    })}
-                  />
-                  {errors.details && (
-                    <span
-                      role="alert"
-                      className="text-red-600 font-bold text-sm"
-                    >
-                      This cant be empty
                     </span>
                   )}
                 </span>
@@ -142,77 +64,246 @@ const ProfessionalForm = ({ data1, changeToggleEdit }: any) => {
                     htmlFor="lastname"
                     className="block text-xs font-semibold text-gray-600 uppercase"
                   >
-                    Facebook Link
+                    BIC Kod
                   </label>
                   <input
                     placeholder="Image link"
                     className="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-                    {...register("facebooklink", {
+                    {...register("biccode", {
                       required: "true",
-                      pattern: {
-                        value: /https?:\/\/.*/,
-                        message: "Entered value does not match link format",
-                      },
                     })}
                   />
-                  {errors.facebooklink && (
+                  {errors.biccode && (
                     <span
                       role="alert"
                       className="text-red-600 font-bold text-sm"
                     >
-                      {errors.facebooklink.message}
+                      This Cant be Empty
                     </span>
                   )}
                 </span>
               </div>
+
               <div className="mt-4">
                 <span className="w-full">
-                  <label className="block text-xs font-semibold text-gray-600 uppercase">
-                    Twitter Link
+                  <label
+                    htmlFor="lastname"
+                    className="block text-xs font-semibold text-gray-600 uppercase"
+                  >
+                    BIC Adress
                   </label>
                   <input
-                    placeholder="Image link"
                     className="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-                    {...register("twitterlink", {
+                    {...register("biccodeadress", {
                       required: "true",
-                      pattern: {
-                        value: /https?:\/\/.*/,
-                        message: "Entered value does not match link format",
-                      },
                     })}
                   />
-                  {errors.twitterlink && (
+                  {errors.biccodeadress && (
                     <span
                       role="alert"
                       className="text-red-600 font-bold text-sm"
                     >
-                      {errors.twitterlink.message}
+                      This Cant be Empty
                     </span>
                   )}
                 </span>
               </div>
+
               <div className="mt-4">
                 <span className="w-full">
-                  <label className="block text-xs font-semibold text-gray-600 uppercase">
-                    Linked In Link
+                  <label
+                    htmlFor="lastname"
+                    className="block text-xs font-semibold text-gray-600 uppercase"
+                  >
+                    Payment Method 1 Name
                   </label>
                   <input
-                    placeholder="Image link"
                     className="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-                    {...register("linkedinlink", {
+                    {...register("payment1name", {
                       required: "true",
-                      pattern: {
-                        value: /https?:\/\/.*/,
-                        message: "Entered value does not match link format",
-                      },
                     })}
                   />
-                  {errors.linkedinlink && (
+                  {errors.payment1name && (
                     <span
                       role="alert"
                       className="text-red-600 font-bold text-sm"
                     >
-                      {errors.linkedinlink.message}
+                      This Cant be Empty
+                    </span>
+                  )}
+                </span>
+              </div>
+
+              <div className="mt-4">
+                <span className="w-full">
+                  <label
+                    htmlFor="lastname"
+                    className="block text-xs font-semibold text-gray-600 uppercase"
+                  >
+                    Payment Method 1 Details
+                  </label>
+                  <input
+                    className="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                    {...register("payment1details", {
+                      required: "true",
+                    })}
+                  />
+                  {errors.payment1details && (
+                    <span
+                      role="alert"
+                      className="text-red-600 font-bold text-sm"
+                    >
+                      This Cant be Empty
+                    </span>
+                  )}
+                </span>
+              </div>
+
+              <div className="mt-4">
+                <span className="w-full">
+                  <label
+                    htmlFor="lastname"
+                    className="block text-xs font-semibold text-gray-600 uppercase"
+                  >
+                    Payment Method 2 Name
+                  </label>
+                  <input
+                    className="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                    {...register("payment2name", {
+                      required: "true",
+                    })}
+                  />
+                  {errors.payment2name && (
+                    <span
+                      role="alert"
+                      className="text-red-600 font-bold text-sm"
+                    >
+                      This Cant be Empty
+                    </span>
+                  )}
+                </span>
+              </div>
+
+              <div className="mt-4">
+                <span className="w-full">
+                  <label
+                    htmlFor="lastname"
+                    className="block text-xs font-semibold text-gray-600 uppercase"
+                  >
+                    Payment Method 2 Details
+                  </label>
+                  <input
+                    className="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                    {...register("payment3details", {
+                      required: "true",
+                    })}
+                  />
+                  {errors.payment3details && (
+                    <span
+                      role="alert"
+                      className="text-red-600 font-bold text-sm"
+                    >
+                      This Cant be Empty
+                    </span>
+                  )}
+                </span>
+              </div>
+
+              <div className="mt-4">
+                <span className="w-full">
+                  <label
+                    htmlFor="lastname"
+                    className="block text-xs font-semibold text-gray-600 uppercase"
+                  >
+                    Payment Method 3 Name
+                  </label>
+                  <input
+                    className="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                    {...register("payment3name", {
+                      required: "true",
+                    })}
+                  />
+                  {errors.payment3name && (
+                    <span
+                      role="alert"
+                      className="text-red-600 font-bold text-sm"
+                    >
+                      This Cant be Empty
+                    </span>
+                  )}
+                </span>
+              </div>
+
+              <div className="mt-4">
+                <span className="w-full">
+                  <label
+                    htmlFor="lastname"
+                    className="block text-xs font-semibold text-gray-600 uppercase"
+                  >
+                    Payment Method 3 Details
+                  </label>
+                  <input
+                    className="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                    {...register("payment3details", {
+                      required: "true",
+                    })}
+                  />
+                  {errors.payment3details && (
+                    <span
+                      role="alert"
+                      className="text-red-600 font-bold text-sm"
+                    >
+                      This Cant be Empty
+                    </span>
+                  )}
+                </span>
+              </div>
+
+              <div className="mt-4">
+                <span className="w-full">
+                  <label
+                    htmlFor="lastname"
+                    className="block text-xs font-semibold text-gray-600 uppercase"
+                  >
+                    Payment Method 4 Name
+                  </label>
+                  <input
+                    className="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                    {...register("payment4name", {
+                      required: "true",
+                    })}
+                  />
+                  {errors.payment4name && (
+                    <span
+                      role="alert"
+                      className="text-red-600 font-bold text-sm"
+                    >
+                      This Cant be Empty
+                    </span>
+                  )}
+                </span>
+              </div>
+
+              <div className="mt-4">
+                <span className="w-full">
+                  <label
+                    htmlFor="lastname"
+                    className="block text-xs font-semibold text-gray-600 uppercase"
+                  >
+                    Payment Method 4 Details
+                  </label>
+                  <input
+                    className="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                    {...register("payment4details", {
+                      required: "true",
+                    })}
+                  />
+                  {errors.payment4details && (
+                    <span
+                      role="alert"
+                      className="text-red-600 font-bold text-sm"
+                    >
+                      This Cant be Empty
                     </span>
                   )}
                 </span>
@@ -240,4 +331,4 @@ const ProfessionalForm = ({ data1, changeToggleEdit }: any) => {
   );
 };
 
-export default ProfessionalForm;
+export default PaymentDetails;

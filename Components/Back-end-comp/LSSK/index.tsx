@@ -11,6 +11,7 @@ const LSSK = ({ data }: any) => {
     });
     setToggle(true);
   };
+
   return (
     <div>
       {data.map((item: any, i: Key | null | undefined) => {

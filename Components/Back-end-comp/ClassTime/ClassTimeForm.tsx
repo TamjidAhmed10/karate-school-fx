@@ -23,7 +23,7 @@ const ClassTimeForm = ({ data1, changeToggleEdit }: any) => {
   return (
     <div>
       <div className="grid place-items-center">
-        <div className="w-11/12 p-12 bg-white sm:w-8/12 md:w-1/2 lg:w-5/12">
+        <div className="w-11/12 p-12 bg-white ">
           <h1 className="text-xl font-semibold">
             Hello there 👋,
             <span className="font-normal">
@@ -136,27 +136,7 @@ const ClassTimeForm = ({ data1, changeToggleEdit }: any) => {
                 )}
               </span>
             </div>
-            <div className="mt-4">
-              <span className="w-full">
-                <label
-                  htmlFor="lastname"
-                  className="block text-xs font-semibold text-gray-600 uppercase"
-                >
-                  4-25 Age Fee
-                </label>
-                <input
-                  className="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-                  {...register("springfeechild", {
-                    required: "true",
-                  })}
-                />
-                {errors.springfeechild && (
-                  <span role="alert" className="text-red-600 font-bold text-sm">
-                    This Cant be Empty
-                  </span>
-                )}
-              </span>
-            </div>
+
             <div className="mt-4">
               <span className="w-full">
                 <label

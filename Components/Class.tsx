@@ -1,4 +1,6 @@
+import { useRouter } from "next/router";
 const Class = (props: any) => {
+  const router = useRouter();
   return (
     <div className=" py-8 " style={{ backgroundColor: "#E6EFB7" }}>
       <h1 className="text-3xl text-center mb-4">Class and Session</h1>
@@ -24,7 +26,14 @@ const Class = (props: any) => {
               from 25 years to above 1000 SEK
             </p>
 
-            <button className="btn btn-info ">Register</button>
+            <button
+              className="btn btn-info "
+              onClick={() => {
+                router.push("/memberform");
+              }}
+            >
+              Register
+            </button>
             <div className="border-b-2 my-8 border-gray-900 md:hidden" />
           </div>
         </div>
@@ -50,7 +59,14 @@ const Class = (props: any) => {
               from 25 years to above 1000 SEK
             </p>
 
-            <button className="btn  btn-info ">Register</button>
+            <button
+              className="btn  btn-info "
+              onClick={() => {
+                router.push("/memberform");
+              }}
+            >
+              Register
+            </button>
 
             <div className=""></div>
           </div>
@@ -60,7 +76,14 @@ const Class = (props: any) => {
         <h2 className="text-2xl font-bold ">Friday</h2>
         <h3 className="text-2xl ">Body Carate</h3>
         <h4 className="text-xl py-1">From 17:00 to 18:00 (Mix training)</h4>
-        <button className="btn  btn-info ">Register</button>
+        <button
+          className="btn  btn-info "
+          onClick={() => {
+            router.push("/memberform");
+          }}
+        >
+          Register
+        </button>
       </div>
     </div>
   );

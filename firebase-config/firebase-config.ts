@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import {getFirestore} from "@firebase/firestore"
+import { getFirestore } from "@firebase/firestore";
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_API_KEY,
   authDomain: process.env.NEXT_PUBLIC_AUTH_DOMAIN,
@@ -7,9 +7,8 @@ const firebaseConfig = {
   storageBucket: process.env.NEXT_PUBLIC_STORAGE_BUCKET,
   messagingSenderId: process.env.NEXT_PUBLIC_MESSAGING_SENDER_ID,
   appId: process.env.NEXT_PUBLIC_APP_ID,
-
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-export const db = getFirestore(app)
+export const app = initializeApp(firebaseConfig);
+export const db = getFirestore(app);

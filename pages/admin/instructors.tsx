@@ -1,10 +1,9 @@
-import TableOf from "../../Components/TableOf";
-import { app } from "../../firebase-config/firebase-config";
+import ComingSoon from "../../Components/ComingSoon";
 import { useRouter } from "next/router";
+import { app } from "../../firebase-config/firebase-config";
 import { getAuth, signOut, onAuthStateChanged } from "firebase/auth";
 import { useEffect, useState } from "react";
-
-const Dashboard = () => {
+const Instructors = () => {
   const router = useRouter();
   const auth = getAuth(app);
   const [isLoading, setIsLoading] = useState(true);
@@ -23,7 +22,7 @@ const Dashboard = () => {
 
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        router.push("/admin/dashboard");
+        router.push("/admin/instructors");
         console.log("user", user);
         setIsLoading(false);
       } else {
@@ -75,10 +74,14 @@ const Dashboard = () => {
             </div>
           </div>
           <ul className="space-y-2 text-sm">
-            <li>
+            <li
+              onClick={() => {
+                router.push("/admin/dashboard");
+              }}
+            >
               <a
                 href="#"
-                className="flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200 bg-gray-200 focus:shadow-outline"
+                className="flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline"
               >
                 <span className="text-gray-600">
                   <svg
@@ -162,7 +165,7 @@ const Dashboard = () => {
             >
               <a
                 href="#"
-                className="flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline"
+                className="flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200 bg-gray-200 focus:shadow-outline"
               >
                 <span className="text-gray-600">
                   <svg
@@ -323,7 +326,7 @@ const Dashboard = () => {
         </div>
         <div className="w-9/12">
           <div className="p-4 mx-auto text-gray-500">
-            <TableOf />
+            <ComingSoon />
           </div>
         </div>
       </div>
@@ -331,4 +334,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Instructors;

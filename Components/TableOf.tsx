@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase-config/firebase-config";
@@ -19,6 +20,9 @@ const TableOf = () => {
   }, []);
   return (
     <div>
+      <div>
+        <h1 className="text-3xl text-center">Table Of Members</h1>
+      </div>
       <div className="overflow-x-auto">
         <table className="table w-full table-zebra">
           <thead>

@@ -7,7 +7,7 @@ const ClassTime = ({ data }: any) => {
     setEditDataOfItem(() => {
       return item;
     });
-    setToggleEdit(true);
+    setToggleEdit(!toggleEdit);
   };
   return (
     <div>

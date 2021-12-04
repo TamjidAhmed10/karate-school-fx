@@ -4,7 +4,7 @@ import { Key } from "react";
 const Partners = ({ data }: any) => {
   return (
     <div>
-      <section className="pt-7 pb-14" style={{ backgroundColor: "#FDFFDE " }}>
+      <section className="pt-7 pb-14" style={{ backgroundColor: "#FFFFFF" }}>
         <div className="container px-8 mx-auto sm:px-12 lg:px-20">
           <h1
             className="text-2xl font-bold tracking-wide text-center  uppercase mb-7"

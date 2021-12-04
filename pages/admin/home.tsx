@@ -1,10 +1,24 @@
-import TableOf from "../../Components/TableOf";
+import ComingSoon from "../../Components/ComingSoon";
 import { app } from "../../firebase-config/firebase-config";
 import { useRouter } from "next/router";
 import { getAuth, signOut, onAuthStateChanged } from "firebase/auth";
 import { useEffect, useState } from "react";
-
-const Dashboard = () => {
+import BackLogo from "../../Components/Back-end-comp/BackLogo";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../firebase-config/firebase-config";
+import LSSK from "../../Components/Back-end-comp/LSSK";
+import Professional from "../../Components/Back-end-comp/Professional";
+import ClassTime from "../../Components/Back-end-comp/ClassTime";
+import PaymentMethod from "../../Components/Back-end-comp/PaymentMethod";
+import FAQB from "../../Components/Back-end-comp/FAQB";
+const HomeB = ({
+  finalLogoData,
+  lsskdetails,
+  professionalteam,
+  classtimes,
+  paymentmethod,
+  faq,
+}: any) => {
   const router = useRouter();
   const auth = getAuth(app);
   const [isLoading, setIsLoading] = useState(true);
@@ -23,7 +37,7 @@ const Dashboard = () => {
 
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        router.push("/admin/dashboard");
+        router.push("/admin/home");
         console.log("user", user);
         setIsLoading(false);
       } else {
@@ -75,10 +89,14 @@ const Dashboard = () => {
             </div>
           </div>
           <ul className="space-y-2 text-sm">
-            <li>
+            <li
+              onClick={() => {
+                router.push("/admin/dashboard");
+              }}
+            >
               <a
                 href="#"
-                className="flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200 bg-gray-200 focus:shadow-outline"
+                className="flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline"
               >
                 <span className="text-gray-600">
                   <svg
@@ -106,7 +124,7 @@ const Dashboard = () => {
             >
               <a
                 href="#"
-                className="flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline"
+                className="flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200 bg-gray-200 focus:shadow-outline"
               >
                 <span className="text-gray-600">
                   <svg
@@ -323,7 +341,12 @@ const Dashboard = () => {
         </div>
         <div className="w-9/12">
           <div className="p-4 mx-auto text-gray-500">
-            <TableOf />
+            <BackLogo data={finalLogoData} />
+            <LSSK data={lsskdetails} />
+            <Professional data={professionalteam} />
+            <ClassTime data={classtimes} />
+            <PaymentMethod data={paymentmethod} />
+            <FAQB data={faq} />
           </div>
         </div>
       </div>
@@ -331,4 +354,64 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default HomeB;
+
+export async function getServerSideProps() {
+  const collectionRef = collection(db, "logos-associated");
+  const logodata: any = await getDocs(collectionRef);
+  const lsskcollectionRef = collection(db, "lsskdetails");
+  const lsskdetailsget: any = await getDocs(lsskcollectionRef);
+  const professionalcollectionRef = collection(db, "professionalTeam");
+  const professionalteamget: any = await getDocs(professionalcollectionRef);
+  const classtimescollectionRef = collection(db, "classtimes");
+  const classtimesget: any = await getDocs(classtimescollectionRef);
+  const paymentmethodcollectionRef = collection(db, "paymentmethod");
+  const paymentmethodget: any = await getDocs(paymentmethodcollectionRef);
+  const faqcollectionRef = collection(db, "faq");
+  const faqget: any = await getDocs(faqcollectionRef);
+  const finalLogoData = logodata.docs.map(
+    (doc: { data: () => any; id: any }) => ({
+      ...doc.data(),
+      id: doc.id,
+    })
+  );
+  const lsskdetails = lsskdetailsget.docs.map(
+    (doc: { data: () => any; id: any }) => ({
+      ...doc.data(),
+      id: doc.id,
+    })
+  );
+  const professionalteam = professionalteamget.docs.map(
+    (doc: { data: () => any; id: any }) => ({
+      ...doc.data(),
+      id: doc.id,
+    })
+  );
+  const classtimes = classtimesget.docs.map(
+    (doc: { data: () => any; id: any }) => ({
+      ...doc.data(),
+      id: doc.id,
+    })
+  );
+  const paymentmethod = paymentmethodget.docs.map(
+    (doc: { data: () => any; id: any }) => ({
+      ...doc.data(),
+      id: doc.id,
+    })
+  );
+  const faq = faqget.docs.map((doc: { data: () => any; id: any }) => ({
+    ...doc.data(),
+    id: doc.id,
+  }));
+
+  return {
+    props: {
+      finalLogoData,
+      lsskdetails,
+      professionalteam,
+      classtimes,
+      paymentmethod,
+      faq,
+    }, // will be passed to the page component as
+  };
+}
